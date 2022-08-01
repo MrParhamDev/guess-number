@@ -1,0 +1,62 @@
+
+
+let stage1 = document.getElementById('stage1');
+let stage2 = document.getElementById('stage2');
+let maximumInput = document.getElementById('maximum');
+let startButton = document.getElementById('start');
+let guessInput = document.getElementById('guess-number');
+let guessButton = document.getElementById('guess-button');
+let chancesSpan = document.getElementById('chances');
+
+let maximumNumber , totalChances , targetNumber;
+startButton.addEventListener('click' , startGame);
+
+
+function startGame(){
+    maximumNumber = Number(maximumInput.value);
+    if(maximumNumber > 10){
+        targetNumber = Math.floor(Math.random() * (maximumNumber + 1));
+        totalChances = Math.floor(Math.log2(maximumNumber) + 1);
+        chancesSpan.textContent = totalChances;
+        stage1.classList.toggle('hidden');
+        stage2.classList.toggle('hidden');
+    }else{
+        let p = document.querySelector('#stage1 p');
+         p.classList.add('red');
+         p.textContent = '*عدد وارد شده باید بزرگتر از 10 باشد*'
+    }
+}
+
+
+guessButton.addEventListener('click' , guess);
+
+function guess(){
+    let yourGuess = Number(guessInput.value);
+    console.log(typeof yourGuess);
+    if(yourGuess > maximumNumber){
+        alert("عدد ورودی از حد بزرگتر است!");
+        return;
+    }if(yourGuess < 0){
+        alert("عدد ورودی از حد کوچکتر است!");
+        return;
+    }
+    if(yourGuess === targetNumber){
+        stage2.innerHTML = '<p class="blue">تبریک شما برنده شدید !</p>';
+        return;
+    }else if(yourGuess > targetNumber){
+        let status = document.getElementById('status');
+        status.innerHTML += '<span class="red"> بزرگ است</span>';
+    }else{
+        let status = document.getElementById('status');
+        status.innerHTML += '<span class="blue"> کوچک است</span>';
+    }
+    
+
+    let remainingChances = Number(chancesSpan.textContent);
+    remainingChances--;
+    if(remainingChances > 0){
+        chancesSpan.textContent = remainingChances;
+    }else{
+        stage2.innerHTML = '<p class="red">متاسفانه فرصت شما به پایان رسید !</p>';
+    }
+}

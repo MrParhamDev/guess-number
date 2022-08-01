@@ -1,0 +1,103 @@
+@font-face {
+    font-family: bnazanin;
+    src: url('fonts/bnazanin.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: bnazaninb;
+    src: url('fonts/bnazaninb.woff');
+    font-weight: bold;
+    font-style: normal;
+}
+*{
+    font-family: bnazanin;
+}
+body{
+    background-color: lightcyan;
+}
+body , button , input{
+    font-size: 20px;
+    direction: rtl;
+    font-family: Tahoma;
+    padding: 5px;
+}
+input{
+    width: 80px;
+}
+h2{
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+    font-family: bnazaninb;
+}
+#stage1 p{
+    font-size: 25px;
+}
+#stage1 input{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+#stage1 button{
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: inherit;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    vertical-align: top;
+    background-image: linear-gradient(45deg , #84ade0 , #798489);
+}
+#stage1 button:hover{
+    background-image: linear-gradient(45deg , #798489, #84ade0 );
+}
+#stage1 input::placeholder{
+    font-size: 16px;
+}
+#stage2 p:first-of-type{
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+    font-family: bnazaninb;
+    display: inline-block;
+    font-size: 24px;
+}
+#stage2 input{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+#stage2 button{
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-family: inherit;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    vertical-align: top;
+    background-image: linear-gradient(45deg , #84ade0 , #798489);
+}
+#stage2 button:hover{
+    background-image: linear-gradient(45deg , #798489, #84ade0 );
+}
+#status{
+    font-size: 23px;
+}
+#chances{
+    font-weight: bold;
+    color: red;
+}
+.blue{
+    color: blue;
+}
+.red{
+    color: red;
+}
+.hidden{
+    display: none;
+}
